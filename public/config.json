@@ -1,0 +1,22 @@
+{
+    "settings": {
+        "port": "8080",
+        "host": "localhost",
+        "dbName": "",
+        "dbUsername": "",
+        "dbPassword": ""
+    },
+    
+    "templateConfig":{
+        "publicFolder": "public/",
+        "templateDir": "theme/html",
+        "templateFile": "index.tpl",
+        "contentsPath": "contents/",
+        "defaultContentsFile": "default",
+        "defaultTemplateExtension": ".htm",
+        "defaultContentsFolder": "default",
+        "default404File": "404",
+        "mode": "STD"
+    }
+
+}
