@@ -16,10 +16,13 @@ class TemplateRender {
         this.template = '';
     }
     
-    renderMainTemplate(){
-        return template;
+    renderTemplate(){
+        return this.template;
     }
 }
 
-module.exports = TemplateRender;
+/*
 module.exports = (config) => { return new TemplateRender(config) }
+*/
+global.TemplateRender = TemplateRender;
+
