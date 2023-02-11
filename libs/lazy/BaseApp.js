@@ -1,21 +1,24 @@
 class BaseApp {
 
+  mainTemplate = '';
     constructor(config) {
       this.config = config;
       this.http = require('http');
       require('./TemplateRender');
       const template = global.TemplateRender;
-      const mainTemplate = new template(config['templateConfig'])
-      this.contents = require('./Contents');
+      this.mainTemplate = new template(config['templateConfig'])
       this.port = config['settings']['port'];
       this.url = "";
-      this.start();
+      this.contents = require('./Contents');
+      this.start();   
     }
   
     start() {
+       
         this.http.createServer((req, res)=>{
 
           //this.url = req.url;
+
           res.write(this.mainTemplate.renderTemplate());
 
           res.end();
@@ -26,11 +29,12 @@ class BaseApp {
     };
 
     test() {
-      console.log('test');
+      return 'adsfasdfsdf';
     }
    
 }
 
-module.exports = BaseApp;
-module.exports = (config) => { return new BaseApp(config) }
+global.BaseApp = BaseApp;
+module.exports = (config) => { return new BaseApp(config) };
+
 
