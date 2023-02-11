@@ -2,20 +2,22 @@ class TemplateRender {
     constructor(config) {
         const fs = require('fs');   
         const mustache = require('mustache');
-        let workingFolder = process.cwd();
-        let templateFolder = config["templateDir"];
-        let templateFile = config["templateFile"];
+        let workingFolder = process.cwd().replace(/\\/g, '/');
+        let templateFolder = config['templateDir'];
+        let templateFile = config['templateFile'];
+        let publicFolder = config['publicFolder'];
+        this.template = '';
 
-        const template = fs.readFileSync(workingFolder+"/"+templateFolder+"/"+templateFile, 'utf8');    
-        this.output = mustache.render(template);
+        const openTemplate = fs.readFileSync(workingFolder + '/' + publicFolder + '/' + templateFolder + '/' + templateFile, 'utf8');    
+        this.template = mustache.render(openTemplate);
     }
 
     clearTemplate(){
-        this.output = "";
+        this.template = '';
     }
     
     renderMainTemplate(){
-        return this.output;
+        return template;
     }
 }
 

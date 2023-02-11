@@ -3,7 +3,8 @@ class BaseApp {
     constructor(config) {
       this.config = config;
       this.http = require('http');
-      this.template = require('./TemplateRender')(this.config["templateConfig"]);
+      this.template = require('./TemplateRender')(this.config['templateConfig']);
+      this.contents = require('./Contents');
       this.port = config["settings"]["port"];
       this.url = "";
       this.start();
@@ -12,11 +13,9 @@ class BaseApp {
     start() {
         this.http.createServer((req, res)=>{
 
-
-
-
           //this.url = req.url;
           res.write(this.template.renderMainTemplate());
+
           res.end();
         }).listen(this.port, () => {
             console.log(`Server listening on port ${this.port}`);
@@ -24,6 +23,9 @@ class BaseApp {
         
     };
 
+    test() {
+      console.log('test');
+    }
    
 }
 

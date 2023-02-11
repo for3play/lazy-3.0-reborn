@@ -1,7 +1,6 @@
 class App {
   constructor(config) {
-    this.config = config;
-    
+    this.config = config; 
   }
 
   start() {
