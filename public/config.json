@@ -1,22 +1,26 @@
 {
-    "settings": {
+    "serverConfig": {
         "port": "8080",
-        "host": "localhost",
-        "dbName": "",
-        "dbUsername": "",
-        "dbPassword": ""
+        "host": "localhost"
     },
-    
-    "templateConfig":{
+    "appConfig": {
         "publicFolder": "public/",
-        "templateDir": "theme/html",
-        "templateFile": "index.tpl",
         "contentsPath": "contents/",
         "defaultContentsFile": "default",
-        "defaultTemplateExtension": ".htm",
         "defaultContentsFolder": "default",
         "default404File": "404",
         "mode": "STD"
+    },
+    "templateConfig":{
+        "templateDir": "theme/html",
+        "templateFile": "index.tpl",
+        "templateExtension": ".htm"
+    },
+    "dbConfig":{
+        "dbHost": "localhost",
+        "dbName": "",
+        "dbUsername": "",
+        "dbPassword": ""
     }
 
 }

@@ -1,3 +1,5 @@
-const config = require("./config");
-const app = require("../libs/lazy/App")(config);
-app.start();
+const config = require('./config.json');
+global.Lazy = require('../libs/lazy/Lazy')(config);
+
+Lazy.Router.test();
+
