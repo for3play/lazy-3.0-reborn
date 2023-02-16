@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "mustache": "^4.2.0",
     "node": "^19.3.0"
   }
 }
