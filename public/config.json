@@ -6,6 +6,7 @@
     "appConfig": {
         "publicFolder": "public/",
         "contentsPath": "contents/",
+        "viewsPath": "views/",
         "defaultContentsFile": "default",
         "defaultContentsFolder": "default",
         "default404File": "404",

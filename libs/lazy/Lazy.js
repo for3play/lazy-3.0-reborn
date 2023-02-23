@@ -1,8 +1,12 @@
 class Lazy{
+
   constructor(config) {
-    const { serverConfig, appConfig, templateConfig, dbConfig } = config;
-    this.Router = require('./Router')(serverConfig);
-    this.Loader = require('./Loader')(appConfig);
+    for (const prop in config) {
+      this[prop] = config[prop];
+    }
+    this.Router = require('./Router')(this.serverConfig);
+    this.Loader = require('./Loader')(this.appConfig);
+    this.Contents = require('./Contents');
   }
 
   start(config) {
@@ -12,6 +16,7 @@ class Lazy{
   request(req){
     this.Loader.data(req);
   }
+
 }
 
 module.exports = (config) => { return new Lazy(config); };

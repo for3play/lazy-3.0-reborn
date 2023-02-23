@@ -1,11 +1,10 @@
-
 class Loader {
 
     constructor(config) {
         for (const prop in config) {
             this[prop] = config[prop];
         }
-        console.log(this.publicFolder);
+        const workingDir = (process.cwd().replace(/\\/g, "/"));
     }
 
     data(data) {
@@ -15,7 +14,10 @@ class Loader {
     
     loadFile(url){
         console.log(url);
+        var filePath = `/${this.publicFolder}/contents${url}`;
+        console.log(filePath);
     }
+    
 }
 
 module.exports = (config) => { return new Loader(config) }
