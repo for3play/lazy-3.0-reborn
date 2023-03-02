@@ -10,7 +10,7 @@
         "defaultContentsFile": "default",
         "defaultContentsFolder": "default",
         "default404File": "404",
-        "mode": "STD"
+        "appMode": "1" /* 0 - API, 1 - STANDARD */
     },
     "templateConfig":{
         "templateDir": "theme/html",
