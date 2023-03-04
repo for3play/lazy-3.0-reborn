@@ -1,6 +1,6 @@
 class Contents {
 
-    constructor(config){
+    constructor(config) {
 
     }
 
